@@ -1,0 +1,43 @@
+---
+name: openjdk-23
+description: |
+  The Java Development Kit is a distribution of Java Technology by Oracle Corporation.
+  It implements the Java Language Specification and the Java Virtual Machine Specification
+  and provides the Standard Edition of the Java Application Programming Interface.
+homepage: https://jdk.java.net/
+licenses:
+  - GPL-2.0
+languages:
+  - Java
+categories:
+  - Runtime
+
+source:
+  id: pkg:generic/java/openjdk@23.0.2
+  download:
+    - target: [darwin_x64]
+      files:
+        openjdk-23.0.2.tar.gz: https://download.java.net/java/GA/jdk23.0.2/6da2a6609d6e406f85c491fcb119101b/7/GPL/openjdk-23.0.2_macos-x64_bin.tar.gz
+      bin: jdk-23.0.2.jdk/Contents/Home/bin/java
+
+    - target: [darwin_arm64]
+      files:
+        openjdk-23.0.2.tar.gz: https://download.java.net/java/GA/jdk23.0.2/6da2a6609d6e406f85c491fcb119101b/7/GPL/openjdk-23.0.2_macos-aarch64_bin.tar.gz
+      bin: jdk-23.0.2.jdk/Contents/Home/bin/java
+
+    - target: [linux_x64, linux_x86]
+      files:
+        openjdk-23.0.2.tar.gz: https://download.java.net/java/GA/jdk23.0.2/6da2a6609d6e406f85c491fcb119101b/7/GPL/openjdk-23.0.2_linux-x64_bin.tar.gz
+      bin: jdk-23.0.2/bin/java
+
+    - target: linux_arm64
+      files:
+        openjdk-23.0.2.tar.gz: https://download.java.net/java/GA/jdk23.0.2/6da2a6609d6e406f85c491fcb119101b/7/GPL/openjdk-23.0.2_linux-aarch64_bin.tar.gz
+      bin: jdk-23.0.2/bin/java
+
+    - target: win
+      files:
+        openjdk-23.0.2.zip: https://download.java.net/java/GA/jdk23.0.2/6da2a6609d6e406f85c491fcb119101b/7/GPL/openjdk-23.0.2_windows-x64_bin.zip
+      bin: jdk-23.0.2/bin/java.exe
+bin:
+  java: "{{source.download.bin}}"
